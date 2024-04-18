@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DailyInventory.DataAccess\DailyInventory.DataAccess.csproj" />
+    <ProjectReference Include="..\DailyInventory.Models\DailyInventory.Models.csproj" />
+  </ItemGroup>
+
+</Project>

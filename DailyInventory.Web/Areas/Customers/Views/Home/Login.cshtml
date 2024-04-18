@@ -1,0 +1,154 @@
+﻿@model DailyInventory.Models.Login
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    .divider:after,
+    .divider:before {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #eee;
+    }
+</style>
+
+<section class="container w-100 px-5 py-5 top-50">
+
+    <div id="DivSignIn" class="row justify-content-center">
+        <div class="col-md-8 col-lg-7 col-xl-6 mt-5">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image">
+        </div>
+        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1 mt-3">
+            <form asp-action="Login" method="post">
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <input type="text" asp-for="LoginID" class="form-control form-control-lg">
+                    <label class="form-label" asp-for="LoginID" style="margin-left: 0px;">Email address</label>
+                    <div class="form-notch">
+                        <div class="form-notch-leading" style="width: 9px;"></div>
+                        <div class="form-notch-middle" style="width: 88.8px;"></div>
+                        <div class="form-notch-trailing"></div>
+                    </div>
+                </div>
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <input type="password" asp-for="Password" class="form-control form-control-lg">
+                    <label class="form-label" asp-for="Password" style="margin-left: 0px;">Password</label>
+                    <div class="form-notch">
+                        <div class="form-notch-leading" style="width: 9px;"></div>
+                        <div class="form-notch-middle" style="width: 64.8px;"></div>
+                        <div class="form-notch-trailing"></div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-around align-items-center mb-4">
+                    <!-- Checkbox -->
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked="">
+                        <label class="form-check-label" for="form1Example3"> Remember me </label>
+                    </div>
+                    <a href="#!">Forgot password?</a>
+                </div>
+                <!-- Submit button -->
+                <div class="row">
+                    <div class="col">
+                        <button type="submit" class="btn btn-warning btn-lg btn-block">Sign In</button>
+                    </div>
+                    <div class="col">
+                        <a onclick="SignUp();" class="btn btn-success btn-lg btn-block">Sign Up</a>
+                    </div>
+                </div>
+                <div class="divider d-flex align-items-center my-4">
+                    <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+                </div>
+                <a class="btn btn-primary btn-lg btn-block mb-3" style="background-color: #3b5998" href="#!" role="button">
+                    <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
+                </a>
+                <a class="btn btn-primary btn-lg btn-block mb-3" style="background-color: #55acee" href="#!" role="button">
+                    <i class="fab fa-twitter me-2"></i>Continue with Twitter
+                </a>
+                <strong><div asp-validation-summary="All" class="text-danger pt-1"></div></strong>
+            </form>
+        </div>
+    </div>
+
+    <div id="DivSignUp" class="container-fluid h-custom d-none">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form>
+
+                    <!-- Name input -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="registerName" class="form-control" />
+                        <label class="form-label" for="registerName">Name</label>
+                    </div>
+
+                    <!-- Username input -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="registerUsername" class="form-control" />
+                        <label class="form-label" for="registerUsername">Username</label>
+                    </div>
+
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <input type="email" id="registerEmail" class="form-control" />
+                        <label class="form-label" for="registerEmail">Email</label>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                        <input type="password" id="registerPassword" class="form-control" />
+                        <label class="form-label" for="registerPassword">Password</label>
+                    </div>
+
+                    <!-- Repeat Password input -->
+                    <div class="form-outline mb-4">
+                        <input type="password" id="registerRepeatPassword" class="form-control" />
+                        <label class="form-label" for="registerRepeatPassword">Repeat password</label>
+                    </div>
+
+                    <!-- Checkbox -->
+                    <div class="form-check d-flex justify-content-center mb-4">
+                        <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked aria-describedby="registerCheckHelpText" />
+                        <label class="form-check-label" for="registerCheck">
+                            I have read and agree to the terms
+                        </label>
+                    </div>
+
+                    <!-- Submit button -->
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-warning btn-lg btn-block">Register & Login</button>
+                        </div>
+                        <div class="col">
+                            <a onclick="SignIn();" class="btn btn-success btn-lg btn-block">Sign In</a>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+
+        });
+
+        function SignUp() {
+            $('#DivSignIn').hide(800);
+            $('#DivSignUp').toggleClass('d-none');
+        }
+
+        function SignIn() {
+            $('#DivSignIn').show(800);
+            $('#DivSignUp').toggleClass('d-none');
+        }
+    </script>
+}
