@@ -1,42 +1,51 @@
 using DailyInventory.DataAccess;
 using DailyInventory.DataAccess.IRepository;
 using DailyInventory.DataAccess.Repository;
+using DailyInventory.Models.Models;
+using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 
-var builder = WebApplication.CreateBuilder(args);
+var webAppBuilder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddMvc().AddRazorRuntimeCompilation();
-builder.Services.AddControllersWithViews();
+webAppBuilder.Services.AddControllers().AddRazorRuntimeCompilation();
+webAppBuilder.Services.AddControllersWithViews();
 
-var Logger = new LoggerConfiguration().WriteTo.File("Logs\\DailyInventry-.txt", rollingInterval: RollingInterval.Day).CreateLogger();
-builder.Logging.AddSerilog(Logger);
+var logger = new LoggerConfiguration()
+    .WriteTo.File("Logs/DailyInventory.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
 
-builder.Services.AddScoped<IDataBase, DataBase>();
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+webAppBuilder.Logging.AddSerilog(logger);
 
-var app = builder.Build();
+webAppBuilder.Services.AddDbContext<DailyInventoryContext>(options =>
+    options.UseSqlServer(webAppBuilder.Configuration.GetConnectionString("DailyInventory")));
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+webAppBuilder.Services.AddScoped<IDataBase, DataBase>();
+webAppBuilder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+webAppBuilder.Services.AddResponseCompression(options =>
 {
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+    options.EnableForHttps = true; // Enable compression over HTTPS (use with caution due to security risks)
+    options.Providers.Add<BrotliCompressionProvider>(); // Add specific providers if desired
+    options.Providers.Add<GzipCompressionProvider>();
+});
+
+var webApp = webAppBuilder.Build();
+
+if (!webApp.Environment.IsDevelopment())
+{
+    webApp.UseExceptionHandler("/Home/Error");
+    webApp.UseHsts();
 }
 
-app.UseHttpsRedirection();
+webApp.UseResponseCompression();
+webApp.UseHttpsRedirection();
+webApp.UseStaticFiles();
+webApp.UseRouting();
+webApp.UseAuthorization();
 
-app.UseStaticFiles();
-
-app.UseRouting();
-
-app.UseAuthorization();
-
-app.MapControllerRoute(
+webApp.MapControllerRoute(
     name: "default",
     pattern: "{area=Customers}/{controller=Home}/{action=Login}/{id?}");
 
-app.MapRazorPages();
-
-app.Run();
+webApp.Run();

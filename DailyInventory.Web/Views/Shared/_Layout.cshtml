@@ -6,31 +6,636 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>@ViewData["Title"] - DailyInventory.Web</title>
 
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-    @*<link rel="stylesheet" href="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/css/dist/mdb5/standard/core.min.css">*@
+    @* <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css"> *@
+
+    <link defer media="print" onload="this.media='all'" rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/fontawesome.css">
+    <noscript>        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/fontawesome.css">    </noscript>
+
+    <link defer media="print" onload="this.media='all'" rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/whiteboard-semibold.css">
+    <noscript>        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/whiteboard-semibold.css">    </noscript>
+
+    <link defer media="print" onload="this.media='all'" rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/utility-fill-semibold.css">
+    <noscript>        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/utility-fill-semibold.css">    </noscript>
+
+    <link defer
+          media="print"
+          onload="this.media='all'"
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v7.1.0/css/utility-duo-semibold.css">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://site-assets.fontawesome.com/releases/v7.1.0/css/utility-duo-semibold.css">
+    </noscript>
+
+    <link defer
+          media="print"
+          onload="this.media='all'"
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v7.1.0/css/utility-semibold.css">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://site-assets.fontawesome.com/releases/v7.1.0/css/utility-semibold.css">
+    </noscript>
+
+    <link defer
+          media="print"
+          onload="this.media='all'"
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v7.1.0/css/thumbprint-light.css">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://site-assets.fontawesome.com/releases/v7.1.0/css/thumbprint-light.css">
+    </noscript>
+
+    <link defer
+          media="print"
+          onload="this.media='all'"
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v7.1.0/css/slab-press-regular.css">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://site-assets.fontawesome.com/releases/v7.1.0/css/slab-press-regular.css">
+    </noscript>
+
+    <link defer
+          media="print"
+          onload="this.media='all'"
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v7.1.0/css/slab-regular.css">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://site-assets.fontawesome.com/releases/v7.1.0/css/slab-regular.css">
+    </noscript>
+
+    <link defer
+          media="print"
+          onload="this.media='all'"
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v7.1.0/css/sharp-duotone-thin.css">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://site-assets.fontawesome.com/releases/v7.1.0/css/sharp-duotone-thin.css">
+    </noscript>
+
+    <link defer
+          media="print"
+          onload="this.media='all'"
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v7.1.0/css/sharp-duotone-solid.css">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://site-assets.fontawesome.com/releases/v7.1.0/css/sharp-duotone-solid.css">
+    </noscript>
+
+    <link defer
+          media="print"
+          onload="this.media='all'"
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v7.1.0/css/sharp-duotone-regular.css">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://site-assets.fontawesome.com/releases/v7.1.0/css/sharp-duotone-regular.css">
+    </noscript>
+
+    <link defer
+          media="print"
+          onload="this.media='all'"
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v7.1.0/css/sharp-duotone-light.css">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://site-assets.fontawesome.com/releases/v7.1.0/css/sharp-duotone-light.css">
+    </noscript>
+
+    <link defer
+          media="print"
+          onload="this.media='all'"
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v7.1.0/css/sharp-thin.css">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://site-assets.fontawesome.com/releases/v7.1.0/css/sharp-thin.css">
+    </noscript>
+
+    <link defer
+          media="print"
+          onload="this.media='all'"
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v7.1.0/css/sharp-solid.css">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://site-assets.fontawesome.com/releases/v7.1.0/css/sharp-solid.css">
+    </noscript>
+
+    <link defer
+          media="print"
+          onload="this.media='all'"
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v7.1.0/css/sharp-regular.css">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://site-assets.fontawesome.com/releases/v7.1.0/css/sharp-regular.css">
+    </noscript>
+
+    <link defer
+          media="print"
+          onload="this.media='all'"
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v7.1.0/css/sharp-light.css">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://site-assets.fontawesome.com/releases/v7.1.0/css/sharp-light.css">
+    </noscript>
+
+    <link defer
+          media="print"
+          onload="this.media='all'"
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v7.1.0/css/notdog-duo-solid.css">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://site-assets.fontawesome.com/releases/v7.1.0/css/notdog-duo-solid.css">
+    </noscript>
+
+    <link defer
+          media="print"
+          onload="this.media='all'"
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v7.1.0/css/notdog-solid.css">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://site-assets.fontawesome.com/releases/v7.1.0/css/notdog-solid.css">
+    </noscript>
+
+    <link defer
+          media="print"
+          onload="this.media='all'"
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v7.1.0/css/jelly-fill-regular.css">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://site-assets.fontawesome.com/releases/v7.1.0/css/jelly-fill-regular.css">
+    </noscript>
+
+    <link defer
+          media="print"
+          onload="this.media='all'"
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v7.1.0/css/jelly-duo-regular.css">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://site-assets.fontawesome.com/releases/v7.1.0/css/jelly-duo-regular.css">
+    </noscript>
+
+    <link defer
+          media="print"
+          onload="this.media='all'"
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v7.1.0/css/jelly-regular.css">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://site-assets.fontawesome.com/releases/v7.1.0/css/jelly-regular.css">
+    </noscript>
+
+    <link defer
+          media="print"
+          onload="this.media='all'"
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v7.1.0/css/etch-solid.css">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://site-assets.fontawesome.com/releases/v7.1.0/css/etch-solid.css">
+    </noscript>
+
+    <link defer
+          media="print"
+          onload="this.media='all'"
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v7.1.0/css/duotone-thin.css">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://site-assets.fontawesome.com/releases/v7.1.0/css/duotone-thin.css">
+    </noscript>
+
+    <link defer media="print" onload="this.media='all'" rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/duotone.css">
+    <noscript>        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/duotone.css">    </noscript>
+
+    <link defer media="print" onload="this.media='all'" rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/duotone-regular.css">
+    <noscript>        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/duotone-regular.css">    </noscript>
+
+    <link defer media="print" onload="this.media='all'" rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/duotone-light.css">
+    <noscript>        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/duotone-light.css">    </noscript>
+
+    <link defer media="print" onload="this.media='all'" rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/thin.css">
+    <noscript>        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/thin.css">    </noscript>
+
+    <link defer media="print" onload="this.media='all'" rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/solid.css">
+    <noscript>        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/solid.css">    </noscript>
+
+    <link defer media="print" onload="this.media='all'" rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/regular.css">
+    <noscript> <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/regular.css"> </noscript>
+
+    <link defer media="print" onload="this.media='all'" rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/light.css">
+    <noscript> <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/light.css"> </noscript>
+
+    <link defer media="print" onload="this.media='all'" rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/brands.css">
+    <noscript>        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/brands.css">    </noscript>
+
+    <link defer media="print" onload="this.media='all'" rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/chisel-regular.css">
+    <noscript>        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/chisel-regular.css">    </noscript>
+
+    @* <link rel="stylesheet" href="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/css/dist/mdb5/standard/core.min.css"> *@
     <link rel='stylesheet' id='roboto-subset.css-css' href='https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/css/mdb5/fonts/roboto-subset.css?ver=3.9.0-update.5' type='text/css' media='all' />
-    <link rel="canonical" href="https://mdbootstrap.com/docs/standard/extended/multiselect/" />
+    @* <link rel="canonical" href="https://mdbootstrap.com/docs/standard/extended/multiselect/" /> *@
 
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/DailyInventory.Web.styles.css" asp-append-version="true" />
 </head>
 <body>
 
-    <partial name="_LayoutHeader" />
+    <header>
+        <partial name="_LayoutHeader" />
+    </header>
 
-    <main role="main" class="pt-3 mdb-docs-layout mb-10">
-        <div class="container-fluid mt-2 px-lg-5">
-            @RenderBody()
-        </div>
+    <main role="main" class="mdb-docs-layout px-lg-5">
+        @RenderBody()
     </main>
 
-    <partial name="_LayoutFooter" />
+    <footer class="footer border-top text-light bg-dark bg-gradient p-3 fixed-bottom">
+        <partial name="_LayoutFooter" />
+    </footer>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        const API_URL = "https://mdbootstrap.com/api/v1";
+
+        // (function (w, d, s, l, i) {
+        //     w[l] = w[l] || []; w[l].push({
+        //         'gtm.start':
+        //             new Date().getTime(), event: 'gtm.js'
+        //     }); var f = d.getElementsByTagName(s)[0],
+        //         j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        //             '//www.googletagmanager.com/gtm.' + 'js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        // })(window, document, 'script', 'dataLayer', 'GTM-W7MBMN');
+
+        const LANGUAGES = {
+            'en': 'English',
+            'cn': '中文'
+        };
+
+        const CURRENCY = {
+            'USD': '$',
+            'EUR': '€',
+            'GBP': '£',
+            'INR': '₹',
+        };
+
+        const LOCALES = {
+            'en': 'en-US',
+            'cn': 'zh-CN'
+        };
+
+        const THEME = {
+            'light': 'light',
+            'dark': 'dark'
+        };
+
+        const LAYOUT = {
+            'fixed': 'fixed',
+            'fluid': 'fluid'
+        };
+
+        const VERSION = {
+            'standard': 'standard',
+            'b5-angular': 'b5-angular',
+            'b5-react': 'b5-react',
+            'b5-vue': 'b5-vue',
+            'b4-angular': 'b4-angular',
+            'b4-react': 'b4-react',
+            'b4-vue': 'b4-vue',
+            'jquery': 'jquery',
+            'angular': 'angular',
+            'react': 'react',
+            'vue': 'vue'
+        };
+
+        const LAYOUT_VERSION = {
+            'standard': 'standard',
+            'b5-angular': 'b5-angular',
+            'b5-react': 'b5-react',
+            'b5-vue': 'b5-vue',
+            'b4-angular': 'b4-angular',
+            'b4-react': 'b4-react',
+            'b4-vue': 'b4-vue',
+            'jquery': 'jquery',
+            'angular': 'angular',
+            'react': 'react',
+            'vue': 'vue'
+        };
+
+        const LAYOUT_MODE = {
+            'standard': 'standard',
+            'b5-angular': 'b5-angular',
+            'b5-react': 'b5-react',
+            'b5-vue': 'b5-vue',
+            'b4-angular': 'b4-angular',
+            'b4-react': 'b4-react',
+            'b4-vue': 'b4-vue',
+            'jquery': 'jquery',
+            'angular': 'angular',
+            'react': 'react',
+            'vue': 'vue'
+        };
+
+        const LAYOUT_TYPE = {
+            'standard': 'standard',
+            'b5-angular': 'b5-angular',
+            'b5-react': 'b5-react',
+            'b5-vue': 'b5-vue',
+            'b4-angular': 'b4-angular',
+            'b4-react': 'b4-react',
+            'b4-vue': 'b4-vue',
+            'jquery': 'jquery',
+            'angular': 'angular',
+            'react': 'react',
+            'vue': 'vue'
+        };
+
+        const CONFIG = {
+            docsApiUrl: "https://mdbootstrap.com/api/docs"
+        };
+
+        const supportedLanguages = {
+            en: {
+                flag: 'flag-united-kingdom',
+                name: 'English'
+            },
+            cn: {
+                flag: 'flag-china',
+                name: '中文'
+            }
+        };
+
+        const currencySymbols = {
+            USD: '$',
+            EUR: '€',
+            GBP: '£',
+            INR: '₹',
+        };
+
+        function getSiteLanguage() {
+            const [, language] = location.pathname.split('/');
+            switch (language) {
+                case 'cn': return 'cn';
+                case 'es': return 'cn';
+                default: return 'en';
+            }
+        }
+
+        function getCurrentTechnology(url) {
+            const currentUrl = url || location.pathname;
+            switch (true) {
+                case (currentUrl.indexOf('/docs/standard') === 0): return 'standard';
+                case (currentUrl.indexOf('/docs/angular') === 0): return 'b5-angular';
+                case (currentUrl.indexOf('/docs/b5/angular') === 0): return 'b5-angular';
+                case (currentUrl.indexOf('/docs/react') === 0): return 'b5-react';
+                case (currentUrl.indexOf('/docs/b5/react') === 0): return 'b5-react';
+                case (currentUrl.indexOf('/docs/b5/vue') === 0): return 'b5-vue';
+                case (currentUrl.indexOf('/docs/b4/jquery') === 0): return 'jquery';
+                case (currentUrl.indexOf('/docs/b4/angular') === 0): return 'angular';
+                case (currentUrl.indexOf('/docs/b4/react') === 0): return 'react';
+                case (currentUrl.indexOf('/docs/vue') === 0): return 'b5-vue';
+                case (currentUrl.indexOf('/docs/b4/vue') === 0): return 'vue';
+            }
+        }
+
+        function getCookie(name) {
+            const decodedCookie = decodeURIComponent(document.cookie);
+            const cookies = decodedCookie.split(';');
+
+            for (let i = 0; i < cookies.length; i++) {
+                let cookie = cookies[i];
+                while (cookie.charAt(0) === ' ') {
+                    cookie = cookie.substring(1);
+                }
+                if (cookie.indexOf(name) === 0) {
+                    return cookie.substring(name.length, cookie.length);
+                }
+            }
+
+            return null;
+        }
+
+        document.addEventListener('dpl_loaded', e => {
+            const cookieName = 'MDBGoSubscriptionTier';
+            const authUser = e.detail;
+            if (authUser.isGoPro && !getCookie(cookieName)) {
+                _setCookie(cookieName, 'Professional', 365);
+            }
+        });
+
+        function _setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        document.addEventListener('DOMContentLoaded', (e) => {
+
+            function checkSidenavActiveLinks() {
+
+                document.querySelectorAll('.sidenav-menu li').forEach((menu) => {
+
+                    var collapse = document.querySelectorAll('ul.sidenav-collapse li').forEach((link) => {
+                        var is_active = link.querySelector('a.sidenav-link').classList.contains('active');
+                        var collapseIcon = menu.querySelector('.rotate-icon');
+
+                        if (is_active && collapseIcon) {
+                            link.classList.add('show');
+                            return false;
+                        }
+                    });
+                });
+            }
+
+
+            checkSidenavActiveLinks();
+
+            const setTransitionProperties = () => {
+                const sidenav = document.getElementById('mdb-sidenav');
+            }
+
+            setTimeout(setTransitionProperties, 1);
+        });
+
+        window.addEventListener("load", (event) => {
+            const locationHash = window.location.hash;
+            const scrollTop = () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            const overviewTab = document.querySelector('#docs-nav-pills a[href="#docsTabsOverview"]');
+            const apiTab = document.querySelector('#docs-nav-pills a[href="#docsTabsAPI"]');
+
+            if (apiTab) {
+                const scrollSpyEl = document.querySelector('body');
+                const scrollSpyTargetOvervie = document.querySelector('#scrollspy');
+                const scrollSpyTargetApi = document.querySelector('#scrollspy-api');
+                let scrollSpyInstance = mdb.ScrollSpy.getInstance(scrollSpyEl);
+
+                overviewTab.addEventListener('shown.mdb.tab', (event) => {
+                    scrollSpyInstance.dispose;
+                    scrollSpyInstance = new mdb.ScrollSpy(scrollSpyEl, { target: scrollSpyTargetOvervie });
+                })
+                apiTab.addEventListener('shown.mdb.tab', (event) => {
+                    scrollSpyInstance.dispose;
+                    scrollSpyInstance = new mdb.ScrollSpy(scrollSpyEl, { target: scrollSpyTargetApi });
+                })
+            }
+
+            if (locationHash === "#docsTabsAPI") {
+                if (apiTab) {
+                    const apiTabsInstance = new mdb.Tab(apiTab);
+
+                    apiTabsInstance.show();
+                    scrollTop();
+                }
+            } else if (locationHash === "#docsTabsOverview") {
+                scrollTop();
+            } else if (["#topTemplates", "#newTemplates", "#trendingTemplates"].indexOf(locationHash) !== -1) {
+                const templateTab = document.querySelector('#templates-nav-pills a[href="' + locationHash + '"]');
+
+                if (templateTab) {
+                    const templateTabsInstance = new mdb.Tab(templateTab);
+
+                    templateTabsInstance.show();
+                    scrollTop();
+                }
+            }
+
+            const navPills = document.querySelectorAll('#docs-nav-pills a[data-mdb-tab-init]');
+
+            if (navPills.length) {
+                navPills.forEach((el) => {
+                    el.addEventListener('click', (e) => {
+                        window.location.hash = e.target.hash;
+
+                        scrollTop();
+                    });
+                });
+            }
+
+            const templatePills = document.querySelectorAll('#templates-nav-pills a[data-mdb-pill-init]');
+
+            if (templatePills.length) {
+                templatePills.forEach((el) => {
+                    el.addEventListener('click', (e) => {
+                        window.location.hash = e.target.hash;
+
+                        scrollTop();
+                    });
+                });
+            }
+        });
+
+        class umdToggler {
+            constructor() {
+                this._togglers = document.querySelectorAll("[data-mdb-umd-toggler]");
+
+                this._init();
+            }
+
+
+            _init() {
+                this._togglers.forEach((item) => {
+
+                    const umdScriptEnabled = item.dataset.script.toLowerCase() === "javascript";
+
+                    if (umdScriptEnabled) {
+                        item.checked = true;
+                    }
+
+                    const tabs = [...item.closest(".nav-pills").querySelectorAll(".nav-link")];
+
+
+                    const indexOfUmd = tabs.findIndex(
+                        (item) => item.textContent.toLowerCase() === "umd"
+                    );
+                    if (indexOfUmd >= 0) {
+                        tabs[indexOfUmd].textContent = "javascript";
+                    }
+                });
+
+                this._togglers.forEach((item) =>
+                    item.addEventListener("change", this._toggleScriptTab.bind(this))
+                );
+            }
+
+            _getSortedScriptTabs(e, tabs) {
+
+                const providedArray = e.target.value
+                    .replace("[", "")
+                    .replace("]", "")
+                    .split(" ");
+                const isScriptFirst =
+                    providedArray.findIndex(item => item.toLowerCase() === "umd") > providedArray.findIndex(item => item.toLowerCase() === "javascript");
+
+
+                const scripts = tabs.filter((item) => {
+
+                    return item.textContent.toLowerCase() === "javascript";
+                });
+
+
+                return isScriptFirst ? scripts : scripts.reverse();
+            }
+
+            _toggleScriptTab(e) {
+                const inputParent = e.target.closest(".nav-pills")
+                const tabs = [...inputParent.querySelectorAll(".nav-link")];
+
+                const sortedScriptTabs = this._getSortedScriptTabs(e, tabs);
+
+
+                const activeTab = inputParent
+                    .querySelector('.active')
+                    .textContent.toLowerCase();
+                const isScriptCurrentTab =
+                    activeTab === "javascript" || activeTab === "umd";
+
+
+                e.target.checked
+                    ? this._toggleScriptTabs(...sortedScriptTabs, isScriptCurrentTab)
+                    : this._toggleScriptTabs(
+                        ...sortedScriptTabs.slice().reverse(),
+                        isScriptCurrentTab
+                    );
+            }
+
+            _toggleScriptTabs(tab1, tab2, isScriptCurrentTab) {
+                tab1.classList.toggle("d-none");
+                tab2.classList.toggle("d-none");
+
+                isScriptCurrentTab && tab2.click();
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            new umdToggler();
+        });
+    </script>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    @* <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js"></script> *@
+
     <script type="text/javascript" src="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/js/dist/mdb5/standard/core.min.js"></script>
-    <script type="text/javascript" src="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/js/dist/search/search.min.js"></script>
-    <script src="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/js/dist/main.min.js"></script>
+
+    @* <script type="text/javascript" src="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/js/dist/search/search.min.js"></script> *@
+    @* <script src="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/js/dist/main.min.js"></script> *@
+
     <script src="~/js/site.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

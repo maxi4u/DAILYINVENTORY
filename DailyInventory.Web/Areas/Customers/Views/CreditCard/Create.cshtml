@@ -1,0 +1,106 @@
+﻿@model DailyInventory.Models.Models.CreditCard
+
+@{
+    ViewData["Title"] = "Create - Models.Models.CreditCard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="pb-4 container">
+    <form asp-action="Create">
+        <div class="border rounded-5">
+            <section class="w-100 p-4 pb-4">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h2>Create New Credit Card Information</h2>
+                    </div>
+                    <div class="card-body row g-4">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="form-outline" data-mdb-input-init>
+                                <input asp-for="CustomerId" type="text" class="form-control form-control-lg" />
+                                <label asp-for="CustomerId" class="form-label">Customer Id</label>
+                            </div>
+                            <span asp-validation-for="CustomerId" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="form-outline" data-mdb-input-init>
+                                <input asp-for="BankName" type="text" class="form-control form-control-lg" />
+                                <label asp-for="BankName" class="form-label">Bank Name</label>
+                            </div>
+                            <span asp-validation-for="BankName" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="form-outline" data-mdb-input-init>
+                                <input asp-for="CreditCardType" type="text" class="form-control form-control-lg" />
+                                <label asp-for="CreditCardType" class="form-label">Credit Card Type</label>
+                            </div>
+                            <span asp-validation-for="CreditCardType" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="form-outline" data-mdb-input-init>
+                                <input asp-for="CreditCardNo" class="form-control form-control-lg" />
+                                <label asp-for="CreditCardNo" class="form-label"></label>
+                            </div>
+                            <span asp-validation-for="CreditCardNo" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="form-outline" data-mdb-input-init>
+                                <input asp-for="CreditCardHolderName" class="form-control form-control-lg" />
+                                <label asp-for="CreditCardHolderName" class="form-label"></label>
+                            </div>
+                            <span asp-validation-for="CreditCardHolderName" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="form-outline" data-mdb-input-init>
+                                <input asp-for="CreditCardDescription" class="form-control form-control-lg" />
+                                <label asp-for="CreditCardDescription" class="form-label"></label>
+                            </div>
+                            <span asp-validation-for="CreditCardDescription" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="form-outline" data-mdb-input-init>
+                                <input asp-for="CreditCardLimit" class="form-control form-control-lg" />
+                                <label asp-for="CreditCardLimit" class="form-label"></label>
+                            </div>
+                            <span asp-validation-for="CreditCardLimit" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="form-outline" data-mdb-input-init>
+                                <input asp-for="CcusedAmount" class="form-control form-control-lg" />
+                                <label asp-for="CcusedAmount" class="form-label"></label>
+                            </div>
+                            <span asp-validation-for="CcusedAmount" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="form-outline" data-mdb-input-init>
+                                <input asp-for="CcunUsedAmount" class="form-control form-control-lg" />
+                                <label asp-for="CcunUsedAmount" class="form-label"></label>
+                            </div>
+                            <span asp-validation-for="CcunUsedAmount" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="p-2 text-center /*border-top*/ mobile-hidden">
+                            <button type="submit" class="btn btn-outline-danger px-3 collapsed hover-overlay shadow-1-strong" data-mdb-ripple-init role="button" aria-expanded="false" data-ripple-color="red">
+                                <i class="fas fa-code me-md-2"></i>
+                                <span class="d-none d-md-inline-block">Create</span>
+                            </button>
+                            <a asp-action="Index" class="btn btn-link px-3" data-ripple-color="hsl(0, 0%, 67%)">
+                                <i class="fas fa-file-code me-md-2 pe-none"></i>
+                                <span class="d-none d-md-inline-block export-to-snippet pe-none">
+                                    Back To List
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </form>
+</section>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

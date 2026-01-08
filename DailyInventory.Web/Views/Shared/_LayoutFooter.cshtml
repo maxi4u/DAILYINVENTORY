@@ -1,5 +1,24 @@
-﻿<footer class="footer border-top text-muted bg-dark bg-gradient p-3 fixed-bottom">
-    <div class="container">
-        &copy; 2023 - DailyInventory.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+﻿@using Microsoft.AspNetCore.Http
+@using Microsoft.Extensions.Hosting
+<div class="container">
+    <div class="row">
+        <div class="col">
+            &copy; @DateTime.Now.Year - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+        <div class="col-auto">
+            @Environment.OSVersion
+        </div>
+        <div class="col-auto">
+            @Environment.Version
+        </div>
+        <div class="col-auto">
+            @Environment.MachineName / @Environment.UserName / @System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList[3].ToString()
+        </div>
+        <div class="col-auto">
+            @DateTime.Now.Ticks
+        </div>
+        <div class="col-auto">
+            @Environment.TickCount64
+        </div>
     </div>
-</footer>
+</div>

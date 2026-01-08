@@ -14,27 +14,30 @@
     }
 </style>
 
-<section class="container w-100 px-5 py-5 top-50">
+<section class="container" style="padding-top:8%">
 
-    <div id="DivSignIn" class="row justify-content-center">
+    <div id="DivSignIn" class="row justify-content-center align-items-center">
         <div class="col-md-8 col-lg-7 col-xl-6 mt-5">
             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image">
         </div>
-        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1 mt-3">
+        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1 mt-5">
             <form asp-action="Login" method="post">
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                    <input type="text" asp-for="LoginID" class="form-control form-control-lg">
-                    <label class="form-label" asp-for="LoginID" style="margin-left: 0px;">Email address</label>
-                    <div class="form-notch">
-                        <div class="form-notch-leading" style="width: 9px;"></div>
-                        <div class="form-notch-middle" style="width: 88.8px;"></div>
-                        <div class="form-notch-trailing"></div>
+                    <div class="input-group form-outline" data-mdb-input-init>
+                        <span class="input-group-text"><i class="fa-duotone fa-solid fa-user fa-fw fa-lg"></i></span>
+                        <input type="text" asp-for="LoginID" class="form-control form-control-lg" required>
+                        <label class="form-label" asp-for="LoginID" style="margin-left: 0px;">Email address</label>
+                        <div class="form-notch">
+                            <div class="form-notch-leading" style="width: 9px;"></div>
+                            <div class="form-notch-middle" style="width: 88.8px;"></div>
+                            <div class="form-notch-trailing"></div>
+                        </div>
                     </div>
                 </div>
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                    <input type="password" asp-for="Password" class="form-control form-control-lg">
+                    <input type="password" asp-for="Password" class="form-control form-control-lg" required>
                     <label class="form-label" asp-for="Password" style="margin-left: 0px;">Password</label>
                     <div class="form-notch">
                         <div class="form-notch-leading" style="width: 9px;"></div>
@@ -53,10 +56,10 @@
                 <!-- Submit button -->
                 <div class="row">
                     <div class="col">
-                        <button type="submit" class="btn btn-warning btn-lg btn-block">Sign In</button>
+                        <button type="submit" class="btn btn-warning btn-lg btn-block" data-mdb-ripple-init>Sign In</button>
                     </div>
                     <div class="col">
-                        <a onclick="SignUp();" class="btn btn-success btn-lg btn-block">Sign Up</a>
+                        <a onclick="SignUp();" class="btn btn-success btn-lg btn-block" data-mdb-ripple-init>Sign Up</a>
                     </div>
                 </div>
                 <div class="divider d-flex align-items-center my-4">

@@ -4,201 +4,135 @@
     ViewData["Title"] = "DASHBOARD";
 }
 
-
-<div class="tab-content">
-    <div class="container">
-        <div class="col-lg-12 col-md-12">
-            <section class="pb-4">
-                <div class="d-flex border rounded-5 DeepBlue">
-                    <div class="d-flex p-2 text-light">
-                        <h1> @ViewData["Title"]</h1>
-                    </div>
+<div class="container">
+    <div class="col-lg-12 col-md-12">
+        <section class="pb-4">
+            <div class="d-flex border rounded-5 DeepBlue">
+                <div class="d-flex p-2 text-light">
+                    <h1> @ViewData["Title"]</h1>
                 </div>
-            </section>
-
-            <div class="h-100 flex-row justify-content-center align-items-center">
-                <div class="row gy-4 mb-4">
-                    @if (Model.Accounts != null)
-                    {
-                        <!-- First column -->
-                        <div class="col-md col-md-4">
-                            <!-- Card -->
-                            <div class="card shadow hover-overlay ripple border border-2 border-danger" data-mdb-ripple-color="dark">
-                                <div class="card-header">
-                                    <h5 class="card-title">Accounts</h5>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">
+            </div>
+        </section>
+        <div class="h-100 flex-row justify-content-center align-items-center">
+            <div class="row gy-4 mb-4">
+                @if (Model.Accounts != null)
+                {
+                    <!-- First column -->
+                    <div class="col-md col-md-4">
+                        <!-- Card -->
+                        <div class="card shadow hover-overlay ripple border border-2 border-danger" data-mdb-ripple-color="dark">
+                            <div class="card-header">
+                                <h5 class="card-title">Accounts</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col text-center" style="margin: -15px auto;">
+                                        <i class="fa-sharp-duotone fa-regular fa-piggy-bank fa-fw fa-4x"></i>
+                                    </div>
+                                    <div class="col text-center fw-bold" style="font-size: 75px;margin: -42px auto;">
                                         @Model.Accounts.Count()
-                                    </h5>
-                                    <p class="card-text">
-
-                                    </p>
-                                </div>
-                                <div class="card-footer text-center">
-                                    <a href="#!" class="btn btn-primary">View Details</a>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- Card -->
-                        </div>
-                        <!-- First column -->
-                    }
-                    else
-                    {
-                        <!-- First column -->
-                        <div class="col-md col-md-4">
-                            <!-- Card -->
-                            <div class="card shadow hover-overlay ripple border border-2 border-danger" data-mdb-ripple-color="dark">
-
-                                <div class="card-body">
-                                    <h5 class="card-title">Accounts</h5>
-                                    <p class="card-text">
-                                        NO Accounts
-                                    </p>
-                                    <a href="#!" class="btn btn-primary">Create Account</a>
-                                </div>
+                            <div class="card-footer text-center">
+                                <button type="button" onclick="location.href='/Customers/Account/Index'" class="btn btn-primary" data-mdb-button-init data-mdb-ripple-init>View Details</button>
                             </div>
-                            <!-- Card -->
                         </div>
-                        <!-- First column -->
-                    }
-                    @if (Model.CreditCards != null)
-                    {
-                        <!-- Second column -->
-                        <div class="col-md col-md-4">
-                            <!-- Card -->
-                            <div class="card shadow hover-overlay ripple border border-2 border-success" data-mdb-ripple-color="dark">
-                                <div class="card-header">
-                                    <h5 class="card-title">Credit Cards</h5>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">
+                        <!-- Card -->
+                    </div>
+                    <!-- First column -->
+                }
+                else
+                {
+                    <!-- First column -->
+                    <div class="col-md col-md-4">
+                        <!-- Card -->
+                        <div class="card shadow hover-overlay ripple border border-2 border-danger" data-mdb-ripple-color="dark">
+                            <div class="card-body">
+                                <h5 class="card-title">Accounts</h5>
+                                <p class="card-text">
+                                    NO Accounts
+                                </p>
+                                <a href="#!" class="btn btn-primary">Create Account</a>
+                            </div>
+                        </div>
+                        <!-- Card -->
+                    </div>
+                    <!-- First column -->
+                }
+                @if (Model.CreditCards != null)
+                {
+                    <!-- Second column -->
+                    <div class="col-md col-md-4">
+                        <!-- Card -->
+                        <div class="card shadow hover-overlay ripple border border-2 border-success" data-mdb-ripple-color="dark">
+                            <div class="card-header">
+                                <h5 class="card-title">Credit Cards</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col text-center" style="margin: -15px auto;">
+                                        <i class="fa-duotone fa-credit-card fa-fw fa-4x"></i>
+                                    </div>
+                                    <div class="col text-center fw-bold" style="font-size: 75px;margin: -42px auto;">
                                         @Model.CreditCards.Count()
-                                    </h5>
-                                    <p class="card-text">
-
-                                    </p>
+                                    </div>
                                 </div>
-                                <div class="card-footer text-center">
-                                    <a href="#!" class="btn btn-primary">View Details</a>
-                                </div>
-                            </div>
-                            <!-- Card -->
-                        </div>
-                        <!-- Second column -->
-                    }
-                    else
-                    {
-                        <!-- Second column -->
-                        <div class="col-md col-md-4">
-                            <!-- Card -->
-                            <div class="card shadow hover-overlay ripple border border-2 border-success" data-mdb-ripple-color="dark">
-                                <div class="card-body">
-                                    <h5 class="card-title">Credit Card</h5>
-                                    <p class="card-text">
-                                        No Credit Card Found
-                                    </p>
-                                    <a href="#!" class="btn btn-primary">New Credit Card</a>
-                                </div>
-                            </div>
-                            <!-- Card -->
-                        </div>
-                        <!-- Second column -->
-                    }
-                    <!-- Third column -->
-                    <div class="col-md col-md-4">
-                        <!-- Card -->
-                        <div class="card shadow hover-overlay btn-block ripple ripple-surface ripple-surface-light rounded-6  gradient-box FlyHigh" data-mdb-ripple-color="dark">
-                            <div class="card-header">
-                                <h5 class="card-title">Card title</h5>
-                            </div>
-                            <div class="card-body">
-                                <select class="select" multiple data-mdb-filter="true">
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                    <option value="4">Four</option>
-                                    <option value="5">Five</option>
-                                    <option value="6">Six</option>
-                                    <option value="7">Seven</option>
-                                    <option value="8">Eight</option>
-                                    <option value="9">Nine</option>
-                                    <option value="10">Ten</option>
-                                </select>
                             </div>
                             <div class="card-footer text-center">
-                                <a href="#!" class="btn btn-primary">View Details</a>
+                                <a asp-action="GoTo" class="btn btn-primary" data-mdb-ripple-init>View Details</a>
                             </div>
                         </div>
                         <!-- Card -->
                     </div>
-                    <!-- Third column -->
+                    <!-- Second column -->
+                }
+                else
+                {
+                    <!-- Second column -->
+                    <div class="col-md col-md-4">
+                        <!-- Card -->
+                        <div class="card shadow hover-overlay ripple border border-2 border-success" data-mdb-ripple-color="dark">
+                            <div class="card-body">
+                                <h5 class="card-title">Credit Card</h5>
+                                <p class="card-text">
+                                    No Credit Card Found
+                                </p>
+                                <a href="#!" class="btn btn-primary">New Credit Card</a>
+                            </div>
+                        </div>
+                        <!-- Card -->
+                    </div>
+                    <!-- Second column -->
+                }
+                <!-- Third column -->
+                <div class="col-md col-md-4">
+                    <!-- Card -->
+                    <div class="card shadow hover-overlay btn-block ripple ripple-surface ripple-surface-light rounded-6  gradient-box FlyHigh" data-mdb-ripple-color="dark">
+                        <div class="card-header">
+                            <h5 class="card-title">Card title</h5>
+                        </div>
+                        <div class="card-body">
+                            <select data-mdb-select-init multiple>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                                <option value="4">Four</option>
+                                <option value="5">Five</option>
+                                <option value="6">Six</option>
+                                <option value="7">Seven</option>
+                                <option value="8">Eight</option>
+                            </select>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="#!" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                    <!-- Card -->
                 </div>
-
-                <div class="row gy-4 mb-4">
-                    <div class="col-md col-md-4">
-                        <!-- Card -->
-                        <div class="card shadow hover-overlay ripple border border-2 border-danger" data-mdb-ripple-color="dark">
-                            <div class="card-header">
-                                <h5 class="card-title">Accounts</h5>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    @Model.Accounts.Count()
-                                </h5>
-                                <p class="card-text">
-
-                                </p>
-                            </div>
-                            <div class="card-footer text-center">
-                                <a href="#!" class="btn btn-primary">View Details</a>
-                            </div>
-                        </div>
-                        <!-- Card -->
-                    </div>
-                    <div class="col-md col-md-4">
-                        <!-- Card -->
-                        <div class="card shadow hover-overlay ripple border border-2 border-danger" data-mdb-ripple-color="dark">
-                            <div class="card-header">
-                                <h5 class="card-title">Accounts</h5>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    @Model.Accounts.Count()
-                                </h5>
-                                <p class="card-text">
-
-                                </p>
-                            </div>
-                            <div class="card-footer text-center">
-                                <a href="#!" class="btn btn-primary">View Details</a>
-                            </div>
-                        </div>
-                        <!-- Card -->
-                    </div>
-                    <div class="col-md col-md-4">
-                        <!-- Card -->
-                        <div class="card shadow hover-overlay ripple border border-2 border-danger" data-mdb-ripple-color="dark">
-                            <div class="card-header">
-                                <h5 class="card-title">Accounts</h5>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    @Model.Accounts.Count()
-                                </h5>
-                                <p class="card-text">
-
-                                </p>
-                            </div>
-                            <div class="card-footer text-center">
-                                <a href="#!" class="btn btn-primary">View Details</a>
-                            </div>
-                        </div>
-                        <!-- Card -->
-                    </div>
-                </div>
-
+                <!-- Third column -->
             </div>
         </div>
     </div>
+    <a asp-action="SendEmail" class="btn btn-primary" data-mdb-ripple-init>Send Email</a>
 </div>

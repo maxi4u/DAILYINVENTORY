@@ -4,5 +4,7 @@ namespace DailyInventory.Services.IRepository;
 
 public interface ICustomerDashBoardRepository : IRepository<CustomerDashBoardModel>
 {
-    Task<CustomerDashBoardModel> GetCustomerDashBoard(string CustID);
+    Task<CustomerDashBoardModel> GetCustomerDashBoard();
+
+    Task<CustomerDashBoardModel> GetCustomerDashBoardByID(string CustID);
 }

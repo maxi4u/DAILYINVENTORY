@@ -58,5 +58,10 @@ namespace DailyInventory.Web.Areas.Customers.Controllers
         {
             return View();
         }
+
+        public IActionResult AboutUs()
+        {
+            return View();
+        }
     }
 }

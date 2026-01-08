@@ -1,7 +1,7 @@
 ﻿using System.Data;
-using System.Data.SqlClient;
 using DailyInventory.Models;
 using DailyInventory.Utilities;
+using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 
 namespace DailyInventory.DataAccess;
@@ -28,7 +28,24 @@ public class DataBase : IDataBase
         return default;
     }
 
-    public async Task<T> GetCustomerDashBoard<T>(string SPName, List<dynamic> SqlParams) where T : new()
+    public async Task<T> GetCustomerDashBoard<T>(string SPName) where T : new()
+    {
+        dynamic Result = new T();
+        var oDS = await PerformAction(SPName);
+
+        if (oDS.Tables.Count > 0 && oDS.Tables[0].Rows.Count > 0)
+        {
+            var Acc = CommonFunction.ConvertDataTable<Accounts>(oDS.Tables[0]);
+            var CC = CommonFunction.ConvertDataTable<CreditCards>(oDS.Tables[1]);
+
+            Result.Accounts = Acc;
+            Result.CreditCards = CC;
+        }
+
+        return Result;
+    }
+
+    public async Task<T> GetCustomerDashBoardByID<T>(string SPName, List<dynamic> SqlParams) where T : new()
     {
         dynamic Result = new T();
         var oDS = await PerformAction(SPName, SqlParams);
@@ -61,14 +78,20 @@ public class DataBase : IDataBase
         return Conn;
     }
 
-    private async Task<DataSet> PerformAction(string SPName, List<dynamic> SqlParams)
+    public async Task SaveAsync()
+    {
+        await OpenDB().OpenAsync();
+    }
+
+    private async Task<DataSet> PerformAction(string SPName, List<dynamic>? SqlParams = null)
     {
         var oDS = new DataSet();
         try
         {
             await using var oSqlConn = OpenDB();
             await using var oCmd = new SqlCommand(SPName, oSqlConn);
-            oCmd.CommandType = CommandType.StoredProcedure; oCmd.Parameters.AddRange(SqlParams.ToArray());
+            oCmd.CommandType = CommandType.StoredProcedure;
+            oCmd.Parameters.AddRange(SqlParams == null ? new List<SqlParameter>().ToArray() : SqlParams?.ToArray());
             using var oSDA = new SqlDataAdapter(oCmd);
             oSDA.Fill(oDS);
         }
